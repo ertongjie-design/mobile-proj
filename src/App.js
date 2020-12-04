@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Input, Carousel } from 'antd';
+
+const { Search } = Input;
+const contentStyle = {
+  width: '100%',
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search placeholder='🔍  搜索您想要的商品'></Search>
+      <Carousel>
+        {
+          [1,2,3,4].map(item => {
+            return <div><div style={contentStyle}></div></div>
+          })
+        }
+      </Carousel>
     </div>
   );
 }
